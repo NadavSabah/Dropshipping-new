@@ -1,5 +1,6 @@
 
 html{font-size:10}
+*{box-sizing: border-box;}
 
 // Global Variables
 $main-color:#984038;
@@ -87,10 +88,10 @@ $main-color:#984038;
 .w-40{width:40%;}
 .w-50{width:50%;}
 .w-60{width:60%;}
-.w-70{width:60%;}
-.w-80{width:60%;}
-.w-90{width:60%;}
-.w-100{width:60%;}
+.w-70{width:70%;}
+.w-80{width:80%;}
+.w-90{width:90%;}
+.w-100{width:100%;}
 .w-auto{width: auto;}
 
 // Height
@@ -102,6 +103,9 @@ $main-color:#984038;
 .visible{visibility: visible;}
 .invisible{visibility: hidden;}
 
+
+.pointer{ cursor:pointer;}
+.img-fluid{ width:100%; height: auto;}
 
 
 

@@ -7,7 +7,8 @@ import {
 } from "react-router-dom";
 import './global.scss';
 import App from './App';
-import CollectionPage from './Pages/CollectionPage';
+import CollectionPage from './Pages/CollectionsPage';
+import Collection from './Pages/Collection'
 import ProductPage from './Pages/ProductPage';
 import CartPage from './Pages/CartPage';
 import reportWebVitals from './reportWebVitals';
@@ -19,14 +20,25 @@ root.render(
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<App />} >
-          <Route path="product" element={<ProductPage />} />
-          <Route path="collection" element={<CollectionPage />} />
+          <Route path="products/:productId" element={<ProductPage />} />
           <Route path="cart" element={<CartPage />} />
+          <Route path="collections" element={<CollectionPage />}>
+            <Route
+              index
+              element={
+                <main style={{ padding: "1rem" }}>
+                  <p>index route shares the path of the parent</p>
+                </main>
+              }
+            />
+            <Route path=":collectionHandle" element={<Collection />} />
+          </Route>
+
           <Route
             path="*"
             element={
               <main style={{ padding: "1rem" }}>
-                <p>404 There's nothing here!</p>
+                <p>404There's nothing here!</p>
               </main>
             }
           />

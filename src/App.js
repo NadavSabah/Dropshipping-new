@@ -12,7 +12,7 @@ function App() {
           paddingBottom: "1rem",
         }}
       >
-        <Link to="/collection">Collection Page</Link> |{" "}
+        <Link to="/collections">Collection Page</Link> |{" "}
         <Link to="/product">Product Page</Link>
         <Link to="/cart">Cart Page</Link>
       </nav>
