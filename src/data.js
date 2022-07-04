@@ -7,7 +7,7 @@ let collections = [
         products: [
             {
                 title: "hats - Product1 title",
-                handle: '1',
+                handle: 'handle1',
                 available: true,
                 price: 56,
                 description: 'hats - description of a product1',
@@ -21,7 +21,7 @@ let collections = [
             },
             {
                 title: "hats - Product2 title",
-                handle: '2',
+                handle: 'handle2',
                 available: true,
                 price: 76,
                 description: 'hats - description of a product2',
@@ -35,7 +35,7 @@ let collections = [
             },
             {
                 title: "hats - Product2 title",
-                handle: '3',
+                handle: 'handle 3',
                 available: true,
                 price: 60,
                 description: 'hats - description of a product2',
@@ -58,6 +58,7 @@ let collections = [
         products: [
             {
                 title: "shirts-Product1 title",
+                handle: '33',
                 available: true,
                 price: 56,
                 description: 'description of a product1',
@@ -71,6 +72,7 @@ let collections = [
             },
             {
                 title: "shirts-Product2 title",
+                handle: '55',
                 available: true,
                 price: 56,
                 description: 'description of a product2 - shirts',
@@ -93,6 +95,7 @@ let collections = [
         products: [
             {
                 title: "Product1 title",
+                handle: "new-handle",
                 available: true,
                 price: 56,
                 description: 'description of a product1',
@@ -101,6 +104,7 @@ let collections = [
             },
             {
                 title: "Product2 title",
+                handle: 'blabla handle',
                 available: true,
                 price: 56,
                 description: 'description of a product2',
@@ -112,6 +116,16 @@ let collections = [
     }
 ];
 
+export function getProducts() {
+    let products = {}
+    collections.forEach(collection => {
+        collection.products.forEach((product) => {
+            products[product.handle] = product
+        })
+    })
+    return products
+}
+
 export function getCollections() {
     return collections;
 }
@@ -122,10 +136,8 @@ export function getCollection(handle) {
     );
 }
 
-export function getProducts() {
-    let products = {}
-    collections.forEach(collection => {
-        collection.products.forEach((product) => products[product.handle] = product)
-    })
-    return products
+
+export function getProductByHandle(handle) {
+    let products = getProducts()
+    return products[handle]
 }
