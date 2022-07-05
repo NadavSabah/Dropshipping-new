@@ -1,32 +1,6 @@
-let cart = {
+export let cart = {
 
     products: [
-        {
-            title: "shirts-Product1 title",
-            available: true,
-            price: 56,
-            description: 'description of a product1',
-            images: [
-                {
-                    url: 'https://justinehats.com/wp-content/uploads/2019/03/black-straw-hat-wide-brim-hat-justine-hats.jpg',
-                    alt: 'alt text'
-                }
-            ],
-            media: []
-        },
-        {
-            title: "shirts-Product2 title",
-            available: true,
-            price: 56,
-            description: 'description of a product2 - shirts',
-            images: [
-                {
-                    url: 'https://justinehats.com/wp-content/uploads/2019/03/black-straw-hat-wide-brim-hat-justine-hats.jpg',
-                    alt: 'alt text'
-                }
-            ],
-            media: []
-        }
 
     ],
     item_count: function () {
@@ -39,5 +13,18 @@ let cart = {
 }
 
 export function getCart() {
+    console.log(cart)
     return cart
-} 
+}
+export function addToCart(product) {
+
+    if (!product) return 'no product supplied addToCart function'
+    product.quantity = (product.quantity || 0) + 1;
+    let productInCart = cart.products.find(currProduct => currProduct.handle === product.handle)
+
+    productInCart ? productInCart.quantity += 1 : cart.products.push(product)
+
+}
+export function removeFromCart(productHandle) {
+    cart.products = cart.products.filter(product => product.handle != productHandle)
+}
