@@ -1,30 +1,33 @@
-export let cart = {
+// export let cart = {
 
-    products: [
+//     products: [
 
-    ],
-    item_count: function () {
-        return this.products.length
-    },
-    total_price: function () {
-        return this.products.reduce((acc, product) => acc + product.price, 0)
-    },
+//     ],
+//     item_count: function () {
+//         return this.products.length
+//     },
+//     total_price: function () {
+//         return this.products.reduce((acc, product) => acc + product.price, 0)
+//     },
 
-}
+// }
 
-export function getCart() {
-    console.log(cart)
-    return cart
-}
-export function addToCart(product) {
+// export function getCart() {
+//     console.log('cart...', cart)
+//     return cart
 
-    if (!product) return 'no product supplied addToCart function'
-    product.quantity = (product.quantity || 0) + 1;
-    let productInCart = cart.products.find(currProduct => currProduct.handle === product.handle)
+// }
+// export function addToCart(product) {
+//     debugger
+//     if (!product) return 'no product supplied addToCart function'
+//     product.quantity = (product.quantity || 0) + 1;
+//     let productInCart = cart.products.find(currProduct => currProduct.handle === product.handle)
 
-    productInCart ? productInCart.quantity += 1 : cart.products.push(product)
+//     productInCart ? productInCart.quantity += 1 : cart.products.push(product)
 
-}
-export function removeFromCart(productHandle) {
-    cart.products = cart.products.filter(product => product.handle != productHandle)
-}
+// }
+// export function removeFromCart(productHandle) {
+//     cart.products = cart.products.filter(product => product.handle != productHandle)
+//     console.log('rmoving and returning cart')
+//     return cart
+// }

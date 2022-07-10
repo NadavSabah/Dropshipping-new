@@ -8,7 +8,7 @@ import {
 import './global.scss';
 import App from './App';
 import CollectionPage from './Pages/CollectionsPage';
-import Collection from './Pages/Collection'
+import Collection from './Components/Collection'
 import ProductPage from './Pages/ProductPage';
 import CartPage from './Pages/CartPage';
 import reportWebVitals from './reportWebVitals';

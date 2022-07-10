@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
-import { getProductByHandle } from "../data";
-import { addToCart, removeFromCart, getCart, cart } from '../cart'
+import { getProductByHandle, addToCart, removeFromCart, getCart, getProducts } from "../data";
 export default function ProductPage() {
 
     let params = useParams()
@@ -16,7 +15,6 @@ export default function ProductPage() {
             <button onClick={() => addToCart(product)}> Add to cart</button>
             <button onClick={() => removeFromCart(product.handle)}> Remove from cart</button>
             <button onClick={() => getCart()}> getCart</button>
-            <button onClick={() => console.log(cart.item_count())}> getItemCount</button>
 
             <Link to="/">Back to homepage</Link>
 

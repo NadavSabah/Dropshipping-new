@@ -115,14 +115,26 @@ let collections = [
         ]
     }
 ];
+//Helpers
 
-export function getProducts() {
-    let products = {}
+const loopOverProducts = (callback) => {
     collections.forEach(collection => {
         collection.products.forEach((product) => {
-            products[product.handle] = product
+            callback(product)
         })
     })
+}
+const filterProductsBy = (filterCondition) => {
+
+    return collections.map(collection => {
+        return collection.products.filter(product => filterCondition(product))
+
+    }).flat()
+}
+
+export function mapProductByHandle() {
+    let products = {}
+    loopOverProducts((product) => products[product.handle] = product)
     return products
 }
 
@@ -136,8 +148,29 @@ export function getCollection(handle) {
     );
 }
 
-
 export function getProductByHandle(handle) {
-    let products = getProducts()
+    let products = mapProductByHandle()
     return products[handle]
+}
+
+// Cart Methods
+
+export function getCart() {
+    let cart = filterProductsBy(product => {
+        return product.quantity > 0
+    })
+    console.log('cart is:', cart)
+
+    return cart
+
+}
+export function addToCart(product) {
+    if (!product) return 'no product supplied addToCart function'
+    product.quantity = (product.quantity || 0) + 1;
+}
+
+export function removeFromCart(productHandle) {
+    let products = mapProductByHandle()
+    products[productHandle].quantity = 0
+
 }

@@ -1,13 +1,13 @@
 import { useParams } from "react-router-dom";
-import { getCollection, getProducts } from "../data";
-import ProductCard from "../Components/ProductCard";
+import { getCollection } from "../data";
+import ProductCard from "./ProductCard";
 
 export default function Collection() {
 
     let params = useParams();
     let collection = getCollection(params.collectionHandle)
-    let products = getProducts()
-    console.log('products:', products)
+
+
 
 
     return (
