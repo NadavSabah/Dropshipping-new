@@ -2,11 +2,11 @@ import { NavLink, Outlet } from "react-router-dom";
 import { getCollections } from "../data";
 
 
+
 export default function CollectionPage() {
     let collections = getCollections();
     return (
         <div className="nadav" style={{ backgroundColor: '#fd6464' }}>
-            <h1>Collections Page</h1>
 
             <NavLink to="/">Back to homepage</NavLink>
             <div className="d-flex justify-content-center">

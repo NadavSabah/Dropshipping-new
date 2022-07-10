@@ -142,6 +142,7 @@ export function getCollections() {
     return collections;
 }
 
+
 export function getCollection(handle) {
     return collections.find(
         (collection) => collection.handle === handle
@@ -172,5 +173,6 @@ export function addToCart(product) {
 export function removeFromCart(productHandle) {
     let products = mapProductByHandle()
     products[productHandle].quantity = 0
+    return getCart()
 
 }

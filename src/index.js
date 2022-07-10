@@ -11,12 +11,13 @@ import CollectionPage from './Pages/CollectionsPage';
 import Collection from './Components/Collection'
 import ProductPage from './Pages/ProductPage';
 import CartPage from './Pages/CartPage';
+import Header from './Components/Header'
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-
   <React.StrictMode>
+
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<App />} >
